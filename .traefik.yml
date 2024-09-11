@@ -5,3 +5,6 @@ iconPath: .assets/icon.png
 import: github.com/FlowingSPDG/querytojson
 
 summary: 'Convert URL queries into JSON field'
+
+testData:
+  targetQuery: queryStringParameters
