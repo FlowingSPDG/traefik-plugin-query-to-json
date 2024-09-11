@@ -1,12 +1,7 @@
-displayName: Demo Plugin
+displayName: URL Query to Request JSON Body
 type: middleware
 iconPath: .assets/icon.png
 
-import: github.com/traefik/plugindemo
+import: github.com/FlowingSPDG/querytojson
 
-summary: '[Demo] Add Request Header'
-
-testData:
-  Headers:
-    X-Demo: test
-    X-URL: '{{URL}}'
+summary: 'Convert URL queries into JSON field'
