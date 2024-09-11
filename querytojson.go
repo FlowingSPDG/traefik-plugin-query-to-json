@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-// compile-time interface assertion
+// compile-time interface assertion.
 var _ http.Handler = (*QueryToJSON)(nil)
 
 // Config the plugin configuration.
@@ -24,6 +24,7 @@ func CreateConfig() *Config {
 	}
 }
 
+// QueryToJSON Middleware itself.
 type QueryToJSON struct {
 	next http.Handler
 	name string
@@ -31,7 +32,7 @@ type QueryToJSON struct {
 }
 
 // New created a new Demo plugin.
-func New(ctx context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
+func New(_ context.Context, next http.Handler, config *Config, name string) (http.Handler, error) {
 	return &QueryToJSON{
 		next: next,
 		name: name,
@@ -51,7 +52,7 @@ func (a *QueryToJSON) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	jsonFields := make(map[string]string)
 	queries := req.URL.Query()
 	for k, query := range queries {
-		// support only first field for now. empty, or mulitple queries will be ignored.
+		// support only first field for now. empty, or multiple queries will be ignored.
 		// e.g. http://example.com/index?product=1&color=red&order&hobbies=programming&hobbies=sports
 		// product/color is valid query. order will be ignored completely.
 		// hobbies will be used, but only last one will be used.

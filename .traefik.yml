@@ -6,5 +6,6 @@ import: github.com/FlowingSPDG/querytojson
 
 summary: 'Convert URL queries into JSON field'
 
+# Does traefik inject querytojson.Config struct directly...?
 testData:
-  targetQuery: queryStringParameters
+  TargetJSONField: queryStringParameters
