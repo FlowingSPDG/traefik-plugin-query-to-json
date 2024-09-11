@@ -2,7 +2,7 @@ displayName: URL Query to Request JSON Body
 type: middleware
 iconPath: .assets/icon.png
 
-import: github.com/FlowingSPDG/querytojson
+import: github.com/FlowingSPDG/traefik-plugin-query-to-json
 
 summary: 'Convert URL queries into JSON field'
 
