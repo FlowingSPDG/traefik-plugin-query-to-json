@@ -62,6 +62,7 @@ func (a *QueryToJSON) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 		}
 	}
 	jsonBody[a.cfg.TargetJSONField] = jsonFields
+	jsonBody["httpMethod"] = "POST" // force post
 
 	jb, err := json.Marshal(jsonBody)
 	if err != nil {
